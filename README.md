@@ -26,7 +26,7 @@ This script automates the process of creating a new Vite project with the React 
 
 1. Ensure you have Node.js and npm installed on your system.
 2. Clone or download this repository.
-3. Open a terminal and navigate to the directory containing the `viretawind_setup.sh` script.
+3. Open a terminal and navigate to the directory containing the `create.sh` script.
 4. Run the script with the desired project name as an argument:
 
 ```bash
