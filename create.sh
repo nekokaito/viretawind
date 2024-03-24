@@ -17,6 +17,7 @@ npm create vite@latest "$project_name" -- --template react
 cd "$project_name" || exit
 
 npm install
+npm install react-router-dom localforage match-sorter sort-by
 npm install -D tailwindcss postcss autoprefixer
 npx tailwindcss init -p
 npm i  daisyui@latest
