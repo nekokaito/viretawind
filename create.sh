@@ -19,6 +19,7 @@ cd "$project_name" || exit
 npm install
 npm install react-router-dom localforage match-sorter sort-by
 npm install -D tailwindcss postcss autoprefixer
+npm install firebase
 npx tailwindcss init -p
 npm i  daisyui@latest
 npm install --save prop-types
@@ -65,29 +66,33 @@ cat << EOF > src/index.css
 EOF
 
 
-cat << EOF > src/app.jsx
-function App() {
-    return (
-        <>
-       
-       {/* Remove From Here */}
+cat << EOF > src/main.jsx
+import React from 'react'
+import ReactDOM from 'react-dom/client'
 
-        <div className="flex gap-3 mt-3">
-        <img className=" w-[100px]" src="https://web.programming-hero.com/home/level2Home/images/logo.svg" alt="" />
-        <div>
-        <h1 className="text-3xl">ViteTemplate, Tailwind, daisyUI, Prop-types and ReactIcons  <br></br>Installed Successfully</h1>
-            <p className="mt-3">Happy Coding!</p>
-        </div>
-        </div>
-            
-         {/* Remove From Here */}
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import './index.css'
 
-        </>
-    );
-}
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <div>Hello world!</div>,
+  },
+]);
 
-export default App;
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    
+    <RouterProvider router={router} />
+    
+  </React.StrictMode>,
+)
+
 EOF
 rm src/App.css
+rm src/App.jsx
 code .
 npm run dev
